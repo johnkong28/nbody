@@ -31,7 +31,7 @@ public class Planet {
 
     }
     public double calcForceExertedBy(Planet other){
-
+        return (g*this.mass*other.mass)/calcDistance(other);
     }
     public void movePlanet(Planet p) {
 
