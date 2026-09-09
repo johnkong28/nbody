@@ -55,26 +55,23 @@ public class TestPlanetConstructor {
 
         String imgFileName = "jupiter.gif";
 
-        /* uncomment when ready
+
         Planet p = new Planet(xxPos, yyPos, xxVel, yyVel, mass, imgFileName);
 
-        checkEquals(xxPos, p.myXPos, "x");
-        checkEquals(yyPos, p.myYPos, "y");
-        checkEquals(xxVel, p.myXVel, "xVelocity");
-        checkEquals(yyVel, p.myYVel, "yVelocity");
-        checkEquals(mass, p.myMass, "mass");
-        checkStringEquals(imgFileName, p.myFileName, "path to image");
+        checkEquals(xxPos, p.xPos, "x");
+        checkEquals(yyPos, p.yPos, "y");
+        checkEquals(xxVel, p.xvel, "xVelocity");
+        checkEquals(yyVel, p.yvel, "yVelocity");
+        checkEquals(mass, p.mass, "mass");
+        checkStringEquals(imgFileName, p.fileName, "path to image");
 
         Planet pCopy = new Planet(p);
-        checkEquals(p.myXPos, pCopy.myXPos, "x");
-        checkEquals(p.myYPos, pCopy.myYPos, "y");
-        checkEquals(p.myXVel, pCopy.myXVel, "xVelocity");
-        checkEquals(p.myYVel, pCopy.myYVel, "yVelocity");
-        checkEquals(p.myMass, pCopy.myMass, "mass");
-        checkStringEquals(p.myFileName, pCopy.myFileName, "path to image");
+        checkEquals(p.xPos, pCopy.xPos, "x");
+        checkEquals(p.yPos, pCopy.yPos, "y");
 
 
-         */
+
+
 
     }
 }

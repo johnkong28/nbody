@@ -1,4 +1,5 @@
 public class Planet {
+    public final double g = 6.67*Math.pow(10, -11);
     double xPos;
     double yPos;
     double xvel;
@@ -22,6 +23,17 @@ public class Planet {
         xvel = p.xvel;
         yvel = p.yvel;
         mass = p.mass;
+
+    }
+    public double calcDistance(Planet other){
+        double dist = Math.pow(Math.pow(this.xPos-other.xPos,2)+Math.pow(this.yPos-other.yPos,2),0.5);
+        return dist;
+
+    }
+    public double calcForceExertedBy(Planet other){
+
+    }
+    public void movePlanet(Planet p) {
 
     }
 }
