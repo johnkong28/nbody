@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class NBody {
 
 
@@ -38,7 +42,45 @@ public class NBody {
 
         }
     }
-    public static double readRadius{
+    public static double readRadius(String fname){
+        try {
+            Scanner scan = new Scanner(new File(fname));
+            scan.nextInt();
+            double radius = scan.nextDouble();
+            scan.close();
+            return radius;
+        } catch (FileNotFoundException e){
+            System.out.println("Bumbaclatt");
+            return 0;
+        }
 
+
+
+    }
+    public static Planet[] readPlanets(String fname){
+        try {
+            Scanner scan = new Scanner(new File(fname));
+            int num = scan.nextInt();
+            scan.nextLine();
+            Planet[] planets = new Planet[num];
+
+            for (int i =0; i<num;i++){
+                double xPos = scan.nextDouble();
+                double yPos = scan.nextDouble();
+                double xvel = scan.nextDouble();
+                double yvel = scan.nextDouble();
+                double mass = scan.nextDouble();
+                String filename = scan.next();
+                Planet newplanet = new Planet(xPos,yPos,xvel,yvel,mass,filename);
+                planets[i] = newplanet;
+            }
+            scan.close();
+            return planets;
+
+        } catch (FileNotFoundException e){
+            System.out.println("Bumbaclatt");
+            Planet[] test = new Planet[0];
+            return test;
+        }
     }
 }

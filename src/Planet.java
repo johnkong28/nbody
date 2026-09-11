@@ -47,12 +47,30 @@ public class Planet {
         xPos = newxpos; yPos = newypos;
     }
 
-    public double calcNetForceExertedBy(Planet[] allPlanets){
+    public double calcNetForceExertedByX(Planet[] allPlanets){
         double netx = 0;
-        double nety = 0;
         for (int i = 0; i < allPlanets.length; i++){
+            Planet other = allPlanets[i];
+            if (!other.equals(this)){
+                netx += calcForceExertedByX(other);
+
+            }
 
         }
+        return netx;
+
+    }
+    public double calcNetForceExertedByY(Planet[] allPlanets){
+        double netx = 0;
+        for (int i = 0; i < allPlanets.length; i++){
+            Planet other = allPlanets[i];
+            if (!other.equals(this)){
+                netx += calcForceExertedByY(other);
+
+            }
+
+        }
+        return netx;
 
     }
 }
