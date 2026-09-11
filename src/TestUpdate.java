@@ -33,17 +33,15 @@ public class TestUpdate {
     private static void checkUpdate() {
         System.out.println("Checking update...");
 
-        /* uncomment when ready
 
         Planet p1 = new Planet(1.0, 1.0, 3.0, 4.0, 5.0, "jupiter.gif");
 
         p1.update(2.0, 1.0, -0.5);
 
-        checkEquals(7.8, p1.myXPos, "update()", 0.01);
-        checkEquals(8.6, p1.myYPos, "update()", 0.01);
-        checkEquals(3.4, p1.myXVel, "update()", 0.01);
-        checkEquals(3.8, p1.myYVel, "update()", 0.01);
+        checkEquals(7.8, p1.xPos, "update()", 0.01);
+        checkEquals(8.6, p1.yPos, "update()", 0.01);
+        checkEquals(3.4, p1.xvel, "update()", 0.01);
+        checkEquals(3.8, p1.yvel, "update()", 0.01);
 
-         */
     }
 }

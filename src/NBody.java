@@ -1,5 +1,6 @@
 public class NBody {
 
+
     public static void main(String[] args) {
         double totalTime = 157788000.0;
         double dt = 25000.0;
@@ -12,30 +13,32 @@ public class NBody {
 
         String fname = "./data/planets.txt";
 
-		/* uncomment after you create Planet class
+
 
 		Planet[] planets = null; // readPlanets(fname);
-        */
 
         double radius = 0.0; // readRadius(fname);
 
-		/* uncomment after you create Planet class
+
 
 		System.out.printf("%d\n", planets.length);
 		System.out.printf("%.2e\n", radius);
 		for (int i = 0; i < planets.length; i++) {
 		    System.out.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
-		   		              planets[i].myXPos, planets[i].myYPos,
-		                      planets[i].myXVel, planets[i].myYVel,
-		                      planets[i].myMass, planets[i].myFileName);
+		   		              planets[i].xPos, planets[i].yPos,
+		                      planets[i].xvel, planets[i].yvel,
+		                      planets[i].mass, planets[i].fileName);
 		}
 
-		*/
+
         StdDraw.setScale(-radius, radius);
         StdDraw.picture(0, 0, "images/starfield.jpg");
 
         for (double t = 0.0; t < totalTime; t += dt) {
 
         }
+    }
+    public static double readRadius{
+
     }
 }
