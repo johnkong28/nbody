@@ -6,22 +6,23 @@ public class NBody {
 
 
     public static void main(String[] args) {
-        double totalTime = 157788000.0;
+        double time = 0;
+        double totalTime = 1577880000000000000000000.0;
         double dt = 25000.0;
-        String pfile = "data/planets.txt";
+        String pfile = "data/twin-binaries.txt";
         if (args.length > 2) {
             totalTime = Double.parseDouble(args[0]);
             dt = Double.parseDouble(args[1]);
             pfile = args[2];
         }
 
-        String fname = "./data/planets.txt";
+        String fname = pfile;
 
 
 
-		Planet[] planets = null; // readPlanets(fname);
+		Planet[] planets = readPlanets(fname); // readPlanets(fname);
 
-        double radius = 0.0; // readRadius(fname);
+        double radius = readRadius(fname); // readRadius(fname);
 
 
 
@@ -37,9 +38,19 @@ public class NBody {
 
         StdDraw.setScale(-radius, radius);
         StdDraw.picture(0, 0, "images/starfield.jpg");
-
+    double[] xForces = new double[planets.length];
+    double[] yForces = new double[planets.length];
         for (double t = 0.0; t < totalTime; t += dt) {
-
+                dt = dt*1.001;
+            StdDraw.picture(0, 0, "images/starfield.jpg");
+            for (int i = 0; i < planets.length; i++){
+                xForces[i] = planets[i].calcNetForceExertedByX(planets);
+                yForces[i] = planets[i].calcNetForceExertedByY(planets);}
+            for (int i = 0; i < planets.length; i++){
+                planets[i].draw();
+                planets[i].update(dt,xForces[i],yForces[i]);
+            }
+            StdDraw.show(10);
         }
     }
     public static double readRadius(String fname){
@@ -61,7 +72,7 @@ public class NBody {
         try {
             Scanner scan = new Scanner(new File(fname));
             int num = scan.nextInt();
-            scan.nextLine();
+            scan.nextDouble();
             Planet[] planets = new Planet[num];
 
             for (int i =0; i<num;i++){

@@ -73,4 +73,7 @@ public class Planet {
         return netx;
 
     }
+    public void draw(){
+        StdDraw.picture(xPos,yPos,"images/"+fileName);
+    }
 }

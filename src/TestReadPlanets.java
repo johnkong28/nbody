@@ -37,25 +37,25 @@ public class TestReadPlanets {
         boolean foundVenus = false;
         boolean randomChecksOkay = true;
         for (Planet p : actualOutput) {
-            if ("earth.gif".equals(p.myFileName)) {
+            if ("earth.gif".equals(p.fileName)) {
                 foundEarth = true;
-                if (!doubleEquals(p.myXPos, 1.4960e+11, 0.01)) {
+                if (!doubleEquals(p.xPos, 1.4960e+11, 0.01)) {
                     System.out.println("Advice: Your Earth doesn't have the right xxPos!");
                     randomChecksOkay = false;
                 }
-            } else if ("mars.gif".equals(p.myFileName)) {
+            } else if ("mars.gif".equals(p.fileName)) {
                 foundMars = true;
-            } else if ("mercury.gif".equals(p.myFileName)) {
+            } else if ("mercury.gif".equals(p.fileName)) {
                 foundMercury = true;
-                if (!doubleEquals(p.myYPos, 0, 0.01)) {
+                if (!doubleEquals(p.yPos, 0, 0.01)) {
                     System.out.println("Advice: Your Mercury doesn't have the right yyPos!");
                     randomChecksOkay = false;
                 }
-            } else if ("sun.gif".equals(p.myFileName)) {
+            } else if ("sun.gif".equals(p.fileName)) {
                 foundSun = true;
-            } else if ("venus.gif".equals(p.myFileName)) {
+            } else if ("venus.gif".equals(p.fileName)) {
                 foundVenus = true;
-                if (!doubleEquals(p.myMass, 4.8690e+24, 0.01)) {
+                if (!doubleEquals(p.mass, 4.8690e+24, 0.01)) {
                     System.out.println("Advice: Your Venus doesn't have the right mass!");
                     randomChecksOkay = false;
                 }
