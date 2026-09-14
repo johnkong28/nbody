@@ -9,13 +9,13 @@ public class NBody {
         double time = 0;
         double totalTime = 1577880000000000000000000.0;
         double dt = 25000.0;
-        String pfile = "data/twin-binaries.txt";
+        String pfile = "data/planets.txt";
         if (args.length > 2) {
             totalTime = Double.parseDouble(args[0]);
             dt = Double.parseDouble(args[1]);
             pfile = args[2];
         }
-
+        String bgfile = "images/starfield.jpg";
         String fname = pfile;
 
 
@@ -37,12 +37,12 @@ public class NBody {
 
 
         StdDraw.setScale(-radius, radius);
-        StdDraw.picture(0, 0, "images/starfield.jpg");
+        StdDraw.picture(0, 0, bgfile);
     double[] xForces = new double[planets.length];
     double[] yForces = new double[planets.length];
         for (double t = 0.0; t < totalTime; t += dt) {
-                dt = dt*1.001;
-            StdDraw.picture(0, 0, "images/starfield.jpg");
+            dt = dt*1.003;
+            StdDraw.picture(0, 0, bgfile);
             for (int i = 0; i < planets.length; i++){
                 xForces[i] = planets[i].calcNetForceExertedByX(planets);
                 yForces[i] = planets[i].calcNetForceExertedByY(planets);}
